@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'top.css' %}" type = "text/css" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="item_container">
+        {% for item in tops %}
+            <li class="item">
+                <div class="item_img"><a href="{% url 'compareView' item.id %}"><img src = "{{item.photo}}"></a></div>
+                <div class="item_name"><a href="{% url 'compareView' item.id %}"> {{item.name}}</a></div>
+            </li>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

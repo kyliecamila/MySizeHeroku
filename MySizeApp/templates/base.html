@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcuticon" href="{% static 'mysize_favicon.png'%}" type="image/x-icon">
+    <link rel="icon" href="{% static 'mysize_favicon.png'%}" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;600&family=Open+Sans:wght@400;600;700&family=Poppins:ital,wght@0,800;0,900;1,900&display=swap" rel="stylesheet">
+    <title>나만의 사이즈 MY SIZE</title>
+    <link href="{% static 'base.css' %}" type="text/css" rel="stylesheet">
+    {% block css %}
+    {% endblock css %}
+</head>
+
+<body>
+    {% block title %}
+    {% endblock %}
+    <nav class="sidenav">
+        <a href="{% url 'home' %}" >HOME</a>
+        <a href="{% url 'mypage' %}" >MY PAGE</a>
+        <a href="{% url 'topView' %}" >TOP</a>
+        <a href="#">BOTTOM</a>
+        <a href="#">OUTER</a>
+    </nav>
+    <div class="content">  
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>

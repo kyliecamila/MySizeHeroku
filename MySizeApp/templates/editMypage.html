@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'editMypage.css' %}" type="text/css" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<h1>EDIT MY SIZE</h1>
+<hr>
+<br><br>
+
+<div class="mySizeContainer">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="context">
+            <label for="size1" >총장</label>
+            <input name="size1" id= "size1" value="{{ editSize.size1 }}" ></input>
+            <br>
+            <label for="size2" >어깨넓이</label>
+            <input name="size2" id= "size2" value="{{ editSize.size2 }}" ></input>
+            <br>
+            <label for="size3" >가슴단면</label>
+            <input name="size3" id= "size3"  value="{{ editSize.size3 }}"></input>
+            <br>
+            <label for="size4" >소매길이</label>
+            <input name="size4" id= "size4" value="{{ editSize.size4 }}"></input>
+        </div>
+        
+        <br>
+        <div class="btn_wrapper">
+            <button type="submit" class="bn3637 bn37">등록</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

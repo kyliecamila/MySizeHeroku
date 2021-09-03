@@ -1,0 +1,48 @@
+.content {
+    font-size: 15px;
+}
+
+.explain {
+    font-size: 12px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.center {
+    width: 200px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.mySizeContainer {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    border: 4px solid black;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.mySize {
+    margin-right: 20px;
+}
+
+.sizeContainer {
+    display: flex;
+    height: 75vh;
+    font-size: 15px;
+}
+
+.sizeTitle,
+.sizeName,
+.sizeNum {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+p {
+    margin: 0px;
+    /* border-top: 5px solid; */
+}

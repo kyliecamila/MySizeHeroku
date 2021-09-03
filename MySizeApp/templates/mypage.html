@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'mypage.css' %}" type="text/css" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<h1>VIEW MY SIZE</h1>
+<hr>
+<br><br>
+
+<div class="mySizeContainer">
+    <div class="mySize">
+        <div>총장 | </div>
+        <div>어깨넓이 | </div>
+        <div>가슴단면 | </div>
+        <div>소매길이 | </div>
+    </div>
+    <div class="mySize">
+        {% for myLength in length %}
+        <div>
+            <div>{{myLength.size1}}</div>
+            <div>{{myLength.size2}}</div>
+            <div>{{myLength.size3}}</div>
+            <div>{{myLength.size4}}</div>
+        </div>
+        <br>
+        <a href="{% url 'editMypage' myLength.pk %}" class="bn3637 bn37">수정</a>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+
+<link href="{% static 'compare.css' %}" type="text/css" rel="stylesheet">
+
+{% endblock %}
+{% block title %}
+<div class="title">COMPARE</div>
+{% endblock %}
+
+{% block content %}
+<div class="bold">*수치: (해당사이즈 수치) - (내 수치)</div>
+<br>
+<div class="bold center">MY SIZE</div>
+<div class="mySizeContainer">
+    <div class="mySize">
+        <div>총장 | </div>
+        <div>어깨넓이 | </div>
+        <div>가슴단면 | </div>
+        <div>소매길이 | </div>
+    </div>
+    <div class="mySize">
+        {% for myInfo in myArr %}
+        <p> {{ myInfo }} </p>
+        {% endfor %}
+    </div>
+</div>
+
+<p class="explain">-1은 내 사이즈보다 1 작음 <br> 1은 내 사이즈보다 1 큼</p>
+
+<br>
+<div class="sizeContainer">
+    <!-- 사이즈 이름 -->
+    <div class="bold sizeTitle">
+        {% for info in target %}
+        <p>{{info.sizeName}}<br><br><br><br></p>
+        {% endfor %}
+    </div>
+
+    <div class="sizeName">
+        {% for info in target %}
+        <div>총장 | </div>
+        <div>어깨넓이 | </div>
+        <div>가슴단면 | </div>
+        <div>소매길이 | </div>
+
+        {% endfor %}
+    </div>
+    <!-- 수치 -->
+    <div class="sizeNum">
+        {% for info in totalArr %}
+        <p> {{ info }} </p>
+        {% endfor %}
+    </div>
+</div>
+<!-- {% for info in targetArr %}
+
+        <div>{{info }}  </div>
+        
+
+        {% endfor %} -->
+</div>
+{% endblock %}
